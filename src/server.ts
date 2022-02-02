@@ -1,3 +1,5 @@
+import 'reflect-metadata';
+
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 
