@@ -7,7 +7,7 @@
   "author": "Peterson Adami Candido (wetrustinprize)",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development ts-node-dev --inspect=0.0.0.0:7001 --exit-child --respawn ./src/server.tsx",
+    "dev": "cross-env NODE_ENV=development ts-node-dev --inspect-brk=0.0.0.0 --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "prisma:migrate": "prisma migrate dev",
     "prisma:push": "prisma push"
   },
@@ -26,8 +26,9 @@
     "apollo-server-express": "^3.6.2",
     "cross-env": "^7.0.3",
     "express": "^4.17.2",
-    "graphql": "^16.3.0",
+    "graphql": "^15.3.0",
     "prisma": "^3.9.0",
+    "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.1.1"
   }
 }
