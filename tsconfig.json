@@ -1,5 +1,14 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@generated": [
+        "src/generated/*"
+      ],
+      "@services": [
+        "src/services/*"
+      ]
+    },
     "target": "es2016",
     "lib": [
       "ES2018",
@@ -11,6 +20,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true, /* Ensure that casing is correct in imports. */
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "importHelpers": true
   }
 }
