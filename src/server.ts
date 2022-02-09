@@ -8,10 +8,13 @@ import path from 'path';
 import http from 'http';
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
 
+require('dotenv').config();
+
 const main = async () => {
   const app = express();
   const httpServer = http.createServer(app);
 
+  // Starts the ApolloServer
   const server = new ApolloServer({
     schema: await buildSchema({
       resolvers: [
@@ -25,9 +28,10 @@ const main = async () => {
   await server.start();
   server.applyMiddleware({ app });
 
-  httpServer.listen(3333, () => {
+  // Stats the server
+  httpServer.listen(process.env.PORT, () => {
     // eslint-disable-next-line no-console
-    console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
+    console.log(`🚀 Server ready at http://localhost:${process.env.PORT}${server.graphqlPath}`);
   });
 };
 
