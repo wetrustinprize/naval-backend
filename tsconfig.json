@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@generated": [
+      "@generated/*": [
         "src/generated/*"
       ],
-      "@services": [
+      "@services/*": [
         "src/services/*"
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*"
       ]
     },
     "target": "es2016",
