@@ -7,13 +7,11 @@ import {
 
 @Resolver()
 export default class UserResolver {
-  private userService = new UserService();
-
     @Mutation(() => User, { description: 'Creates a new user' })
-  async createUser(
+  static async createUser(
         @Args() input: CreateUserArguments,
   ): Promise<User> {
-    const user = await this.userService.create(input);
+    const user = await UserService.create(input);
 
     return user;
   }

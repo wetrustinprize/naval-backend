@@ -1,20 +1,19 @@
 import { User } from '@generated/type-graphql';
 import CreateUserArguments from '@interfaces/User/CreateUserArguments';
-import { PrismaClient } from '@prisma/client';
+import prismaClient from '@utils/prisma';
 import bcrypt from 'bcryptjs';
 
 export default class UserService {
-  private prismaClient = new PrismaClient();
-
   /**
    * Creates a new user
    * @param createUserArguments The information of the new user
    * @returns The user object
    */
-  async create(createUserArguments: CreateUserArguments): Promise<User> {
+  static async create(createUserArguments: CreateUserArguments): Promise<User> {
     const password = await bcrypt.hash(createUserArguments.password, await bcrypt.genSalt());
 
-    if (await this.prismaClient.user.findFirst({
+    // Check if username is already taken
+    if (await prismaClient.user.findFirst({
       where: {
         username: createUserArguments.username,
       },
@@ -22,7 +21,8 @@ export default class UserService {
       throw new Error('username already taken');
     }
 
-    if (await this.prismaClient.user.findFirst({
+    // Check if any user has this e-mail registered
+    if (await prismaClient.user.findFirst({
       where: {
         email: createUserArguments.email,
       },
@@ -30,7 +30,8 @@ export default class UserService {
       throw new Error('email already in use');
     }
 
-    const user = await this.prismaClient.user.create({
+    // Creates the new user
+    const user = await prismaClient.user.create({
       data: { ...createUserArguments, password },
     });
 
