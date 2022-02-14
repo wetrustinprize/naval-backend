@@ -28,6 +28,17 @@
         }
     },
     "rules": {
-        "import/no-unresolved": "error"
-    }
+        "import/no-unresolved": "error",
+        "import/extensions": "off"
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/*.test.ts"
+            ],
+            "env": {
+                "jest": true
+            }
+        }
+    ]
 }
