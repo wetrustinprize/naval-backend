@@ -8,7 +8,7 @@ import {
 @Resolver()
 export default class UserResolver {
     @Mutation(() => User, { description: 'Creates a new user' })
-  static async createUser(
+  async createUser(
         @Args() input: CreateUserArguments,
   ): Promise<User> {
     const user = await UserService.create(input);
