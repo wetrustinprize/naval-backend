@@ -1,4 +1,4 @@
-import AuthenticateArguments from '@interfaces/Authorization/AuthenticateArguments';
+import AuthenticateArguments from '@interfaces/Authentication/AuthenticateArguments';
 import prismaClient from '@utils/prisma';
 import bcryptjs from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
@@ -22,7 +22,7 @@ export default class AuthenticationService {
 
     const token = sign(
       {
-        id: user.id,
+        userId: user.id,
       },
       process.env.JWT_SECRET as string,
       {

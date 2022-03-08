@@ -8,7 +8,7 @@ const NavalContextHandler: ContextFunction = ({ req }) => {
   try {
     const token = verify(req.headers.authorization || '', process.env.JWT_SECRET as string) as any;
 
-    userId = token.user_id;
+    userId = token.userId;
   } catch (e) {
     if (!(e instanceof JsonWebTokenError)) {
       throw e;
