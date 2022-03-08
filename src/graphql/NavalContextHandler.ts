@@ -1,4 +1,4 @@
-import { NavalContext } from '@interfaces/NavalContext';
+import { NavalContext } from 'src/graphql/NavalContext';
 import { ContextFunction } from 'apollo-server-core';
 import { JsonWebTokenError, verify } from 'jsonwebtoken';
 

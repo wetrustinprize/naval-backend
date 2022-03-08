@@ -1,4 +1,4 @@
-import { NavalContext } from '@interfaces/NavalContext';
+import { NavalContext } from 'src/graphql/NavalContext';
 import { AuthChecker } from 'type-graphql';
 
 type NavalRoles = 'USER';
