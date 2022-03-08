@@ -8,6 +8,9 @@ import path from 'path';
 import http from 'http';
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
 
+import NavalAuthChecker from './graphql/NavalAuthChecker';
+import NavalContextHandler from './graphql/NavalContextHandler';
+
 require('dotenv').config();
 
 const main = async () => {
@@ -21,8 +24,10 @@ const main = async () => {
         path.resolve(__dirname, 'resolvers', '**', '*.{ts,js}'),
       ],
       emitSchemaFile: true,
+      authChecker: NavalAuthChecker,
     }),
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+    context: NavalContextHandler,
   });
 
   await server.start();
