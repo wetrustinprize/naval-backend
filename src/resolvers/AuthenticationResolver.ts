@@ -1,4 +1,4 @@
-import AuthenticateArguments from '@interfaces/Authorization/AuthenticateArguments';
+import AuthenticateArguments from '@interfaces/Authentication/AuthenticateArguments';
 import AuthenticationService from '@services/AuthenticationService';
 import { Args, Query, Resolver } from 'type-graphql';
 
