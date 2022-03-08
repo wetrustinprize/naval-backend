@@ -4,7 +4,6 @@ services:
   database:
     image: postgres
     container_name: naval-database
-    restart: always
     ports:
       - 5432:5432
     environment:
@@ -16,7 +15,6 @@ services:
   app:
     build: .
     container_name: naval-backend
-    restart: always
     ports:
       - ${PORT}:${PORT}
       - 9229:9229
