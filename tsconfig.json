@@ -17,7 +17,7 @@
     },
     "target": "es2016",
     "lib": [
-      "ES2018",
+      "ES2016",
       "ESNext.AsyncIterable"
     ],
     "experimentalDecorators": true,
