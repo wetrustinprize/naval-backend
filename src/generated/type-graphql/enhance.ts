@@ -41,7 +41,7 @@ function applyTypeClassEnhanceConfig<
 }
 
 const modelsInfo = {
-  User: ["id", "username", "email", "createdAt", "updatedAt"],
+  User: ["id", "username", "email", "role", "createdAt", "updatedAt"],
   Match: ["id", "state", "roundTimer", "currentTimer", "match", "currentPlayerId", "createdAt", "updatedAt"],
   PlayerOnMatch: ["matchId", "playerId", "totalScanners", "totalMissiles", "totalKills", "totalDeaths", "assignedAt"]
 };

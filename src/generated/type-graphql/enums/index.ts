@@ -5,4 +5,5 @@ export { MatchState } from "./MatchState";
 export { PlayerOnMatchScalarFieldEnum } from "./PlayerOnMatchScalarFieldEnum";
 export { QueryMode } from "./QueryMode";
 export { SortOrder } from "./SortOrder";
+export { UserRole } from "./UserRole";
 export { UserScalarFieldEnum } from "./UserScalarFieldEnum";

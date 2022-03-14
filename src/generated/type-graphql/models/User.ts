@@ -4,6 +4,7 @@ import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../scalars";
 import { Match } from "../models/Match";
 import { PlayerOnMatch } from "../models/PlayerOnMatch";
+import { UserRole } from "../enums/UserRole";
 
 @TypeGraphQL.ObjectType("User", {
   isAbstract: true
@@ -23,6 +24,11 @@ export class User {
     nullable: false
   })
   email!: string;
+
+  @TypeGraphQL.Field(_type => UserRole, {
+    nullable: false
+  })
+  role!: "ADMIN" | "USER";
 
   password?: string;
 
