@@ -11,6 +11,12 @@ scalar DateTime
 type Mutation {
   """Creates a new user"""
   createUser(email: String!, password: String!, username: String!): User!
+
+  """Deletes the logged user"""
+  deleteMyAccount: Boolean!
+
+  """Deletes a user"""
+  deleteUser(id: String!, username: String!): Boolean!
 }
 
 type Query {
@@ -23,6 +29,12 @@ type User {
   createdAt: DateTime!
   email: String!
   id: String!
+  role: UserRole!
   updatedAt: DateTime!
   username: String!
+}
+
+enum UserRole {
+  ADMIN
+  USER
 }
