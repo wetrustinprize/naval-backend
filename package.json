@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node-dev -r tsconfig-paths/register --inspect=0.0.0.0 --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "gen": "prisma generate",
-    "prisma:db": "docker-compose exec app npx prisma db",
+    "prisma": "docker-compose exec app npx prisma",
     "test": "cross-env NODE_ENV=test jest"
   },
   "devDependencies": {
