@@ -13,6 +13,7 @@ describe('Authentication Service', () => {
     password: '123',
     updatedAt: new Date(),
     username: 'username',
+    role: 'USER',
   };
 
   it('should be able to get the authorization token', async () => {
